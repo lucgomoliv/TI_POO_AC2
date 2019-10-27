@@ -22,10 +22,21 @@ namespace TI_POO_AC2
             foreach(string parte in partes)
             {
                 int pot = parte.Length - 1;
-                for (int i = 0; i > parte.Length; i++)
+                double aux = 0;
+                for (int i = 0; i < parte.Length; i++)
                 {
-                    conv += parte[i] * (int)Math.Pow(2d, pot);
+                    aux += int.Parse(parte[i].ToString()) * (int)Math.Pow(2, pot);
                     pot--;
+                }
+                switch (aux)
+                {
+                    case 10: conv += "A"; break;
+                    case 11: conv += "B"; break;
+                    case 12: conv += "C"; break;
+                    case 13: conv += "D"; break;
+                    case 14: conv += "E"; break;
+                    case 15: conv += "F"; break;
+                    default: conv += aux; break;
                 }
             }
             return "0x" + conv;

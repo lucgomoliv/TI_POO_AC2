@@ -11,7 +11,7 @@ namespace TI_POO_AC2
         public string Converter(int num)
         {
             string bin = "";
-            for(int i = 0; num < 1; i++)
+            for(int i = 0; num > 0; i++)
             {
                 bin += num % 2;
                 num /= 2;
@@ -26,7 +26,7 @@ namespace TI_POO_AC2
             int pot = bin.Length - 1;
             for(int i = 0; i > bin.Length; i++)
             {
-                conv += bin[i] * (int) Math.Pow(2d, pot);
+                conv += bin[i] * (int) Math.Pow(2, pot);
                 pot--;
             }
             return conv;
