@@ -21,8 +21,10 @@ namespace TI_POO_AC2
 
         private void BtnCalcular_Click(object sender, EventArgs e)
         {
-            txtIEE754.Text = convIEEE754.Converter(double.Parse(txtNum1.Text));
-            txtHexa.Text = convHexadecimal.Converter(txtIEE754.Text);
+            txtIEEE7541.Text = convIEEE754.Converter(double.Parse(txtNum1.Text));
+            txtIEEE7542.Text = convIEEE754.Converter(double.Parse(txtNum2.Text));
+            txtHexa1.Text = convHexadecimal.Converter(txtIEEE7541.Text);
+            txtHexa2.Text = convHexadecimal.Converter(txtIEEE7542.Text);
         }
     }
 }
