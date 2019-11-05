@@ -35,23 +35,20 @@ namespace TI_POO_AC2
 
         public string Converter(double num)
         {
-            int parteInt = int.Parse(num.ToString().Split(',')[0]);
-            decimal parteDecimal = decimal.Parse(num.ToString().Split(',')[1].Insert(0,"0,"));
-            string conv = Converter(parteInt) + ",";
-            int convInt;
+            decimal[] partes = SepararDecimal(num);
+            string conv = Converter((int) partes[0]) + ",";
             do
             {
-                parteDecimal *= 2;
-                convInt = int.Parse(parteDecimal.ToString().Split(',')[0]);
-                parteDecimal = decimal.Parse(parteDecimal.ToString().Split(',')[1].Insert(0,"0,"));
-                conv += convInt;
+                partes[1] *= 2;
+                partes = SepararDecimal(partes[1]);
+                conv += partes[0];
                 if (conv.Split(',')[1].Length + conv.Split(',')[0].Length - 1 == 23)
                 {
-                    if (parteDecimal != 0) conv = AddBit(conv);
-                    parteDecimal = 0;
+                    if (partes[1] != 0) conv = AddBit(conv);
+                    partes[1] = 0;
                 }
 
-            } while (parteDecimal != 0);
+            } while (partes[1] != 0);
             return conv;
         }
 
@@ -75,6 +72,21 @@ namespace TI_POO_AC2
                 }
             }
             return num;
+        }
+
+        /// <summary>
+        /// Retorna o valor inteiro e decimal de um número, respectivamente
+        /// </summary>
+        /// <param name="Número"></param>
+        /// <returns></returns>
+        private decimal[] SepararDecimal(object num)
+        {
+            decimal[] aux = new decimal[]
+            {
+                int.Parse(num.ToString().Split(',')[0]),
+                decimal.Parse(num.ToString().Split(',')[1].Insert(0, "0,"))
+            };
+            return aux;
         }
     }
 }
