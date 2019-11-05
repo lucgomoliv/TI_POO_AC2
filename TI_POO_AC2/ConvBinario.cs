@@ -35,6 +35,7 @@ namespace TI_POO_AC2
 
         public string Converter(double num)
         {
+            if(num < 0) num *= -1;
             decimal[] partes = SepararDecimal(num);
             string conv = Converter((int) partes[0]) + ",";
             do

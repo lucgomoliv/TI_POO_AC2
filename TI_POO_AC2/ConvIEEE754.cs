@@ -13,7 +13,9 @@ namespace TI_POO_AC2
         public string Converter(double num)
         {
             string bin = convBinario.Converter(num);
-            int sinal = 0;
+            int sinal;
+            if (num < 0) sinal = 1;
+            else sinal = 0;
             bin.Remove(bin.IndexOf(','), 1);
             int expPolarizado = (bin.Split(',')[0].Length - 1) + 127;
             string expConv = convBinario.Converter(expPolarizado);
