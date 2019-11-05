@@ -11,6 +11,7 @@ namespace TI_POO_AC2
         public string Converter(int num)
         {
             string bin = "";
+            if (num == 0) bin = "0";
             for(int i = 0; num > 0; i++)
             {
                 bin += num % 2;
