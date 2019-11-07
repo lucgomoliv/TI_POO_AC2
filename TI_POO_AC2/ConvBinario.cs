@@ -12,7 +12,7 @@ namespace TI_POO_AC2
         {
             string bin = "";
             if (num == 0) bin = "0";
-            for(int i = 0; num > 0; i++)
+            for (int i = 0; num > 0; i++)
             {
                 bin += num % 2;
                 num /= 2;
@@ -26,9 +26,9 @@ namespace TI_POO_AC2
         {
             int conv = 0;
             int pot = bin.Length - 1;
-            for(int i = 0; i > bin.Length; i++)
+            for (int i = 0; i > bin.Length; i++)
             {
-                conv += bin[i] * (int) Math.Pow(2, pot);
+                conv += bin[i] * (int)Math.Pow(2, pot);
                 pot--;
             }
             return conv;
@@ -36,44 +36,18 @@ namespace TI_POO_AC2
 
         public string Converter(double num)
         {
-            if(num < 0) num *= -1;
+            int numBits = 46; //Número de bits da parte decimal
+            if (num < 0) num *= -1;
             decimal[] partes = SepararDecimal(num);
-            string conv = Converter((int) partes[0]) + ",";
+            string conv = Converter((int)partes[0]) + ",";
             do
             {
                 partes[1] *= 2;
                 partes = SepararDecimal(partes[1]);
                 conv += partes[0];
-                if (conv.Split(',')[1].Length + conv.Split(',')[0].Length - 1 == 23)
-                {
-                    if (partes[1] != 0) conv = AddBit(conv);
-                    partes[1] = 0;
-                }
-
+                if (conv.Split(',')[1].Length + conv.Split(',')[0].Length - 1 == numBits) partes[1] = 0;
             } while (partes[1] != 0);
             return conv;
-        }
-
-        private string AddBit(string num)
-        {
-            bool vaiUm = true;
-            for(int i = num.Length - 1; vaiUm; i--)
-            {
-                if (vaiUm)
-                {
-                    if (num[i] == '1')
-                    {
-                        num = num.Remove(num.Length - 1) + '0';
-                        vaiUm = true;
-                    }
-                    else
-                    {
-                        num = num.Remove(i,1).Insert(i, "1");
-                        vaiUm = false;
-                    }
-                }
-            }
-            return num;
         }
 
         /// <summary>
@@ -83,12 +57,21 @@ namespace TI_POO_AC2
         /// <returns></returns>
         private decimal[] SepararDecimal(object num)
         {
-            decimal[] aux = new decimal[]
+            decimal[] aux = new decimal[2];
+            try
             {
+                aux = new decimal[]
+                {
                 int.Parse(num.ToString().Split(',')[0]),
                 decimal.Parse(num.ToString().Split(',')[1].Insert(0, "0,"))
-            };
+                };
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                aux = new decimal[] { int.Parse(num.ToString()), 0 };
+            }
             return aux;
+
         }
     }
 }
