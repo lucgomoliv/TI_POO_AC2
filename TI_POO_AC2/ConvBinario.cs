@@ -37,15 +37,18 @@ namespace TI_POO_AC2
         public string Converter(double num)
         {
             int numBits = 46; //Número de bits da parte decimal
-            if (num < 0) num *= -1;
             decimal[] partes = SepararDecimal(num);
+            if (num < 0) num *= -1;
             string conv = Converter((int)partes[0]) + ",";
             do
             {
                 partes[1] *= 2;
                 partes = SepararDecimal(partes[1]);
                 conv += partes[0];
-                if (conv.Split(',')[1].Length + conv.Split(',')[0].Length - 1 == numBits) partes[1] = 0;
+                if (conv.Split(',')[1].Length + conv.Split(',')[0].Length - 1 == numBits)
+                {
+                    partes[1] = 0;
+                }
             } while (partes[1] != 0);
             return conv;
         }
