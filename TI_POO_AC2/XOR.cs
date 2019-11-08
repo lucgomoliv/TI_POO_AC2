@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_POO_AC2
 {
-    class XOR
+    public class XOR
     {
         /// <summary>
         /// Faz a operação XOR bit a bit entre 2 valores booleanos

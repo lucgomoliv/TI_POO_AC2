@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_POO_AC2
 {
-    public class OR
+    public public class OR
     {
         /// <summary>
         /// Faz a operação OR bit a bit entre 2 valores booleanos

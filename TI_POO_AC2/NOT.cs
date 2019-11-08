@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TI_POO_AC2
 {
-    class NOT
+    public class NOT
     {
         /// <summary>
         /// Faz a operação NOT bit a bit de 1 valor booleano

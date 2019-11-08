@@ -12,13 +12,14 @@ namespace TI_POO_AC2
 
         public string Converter(double num)
         {
+            bool arr = false;
             if (num != 0)
             {
                 string bin = convBinario.Converter(num);
                 int expPolarizado = Expoente(bin);
                 if (num > 0 && num < 1 || num < 0 && num > 1) bin = Normalizar(bin);
                 if (bin.Length > 24) bin = bin.Substring(0, 25);
-                bin = Arrendondar(num, bin);
+                if(arr) bin = Arrendondar(num, bin);
                 int sinal;
                 if (num < 0) sinal = 1;
                 else sinal = 0;
