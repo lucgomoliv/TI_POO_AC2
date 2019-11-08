@@ -11,6 +11,7 @@ namespace TI_POO_AC2
         Somador somador = new Somador();
         Demultiplexador demultiplexador = new Demultiplexador();
         OperacoesLogicas operacoes = new OperacoesLogicas();
+        Substrator substrator = new Substrator();
 
         public bool Operar(bool a, bool b, bool[] op, out bool vaiUm)
         {
@@ -24,7 +25,9 @@ namespace TI_POO_AC2
                 resOps[1], //A OR B
                 resOps[2], //A'
                 resOps[3], //B'
-                somador.Operar(a, b, vemUm, out vaiUm, controle[4]) //A + B ou A - B
+                somador.Operar(a, b, vemUm, out vaiUm, controle[4]), //A + B 
+                substrator.Operar(a, b, vemUm, out vaiUm, controle[5]) //A - B
+
             });
         }
     }

@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Multiplicador.cs" />
     <Compile Include="NOT.cs" />
     <Compile Include="OperacoesLogicas.cs" />
     <Compile Include="OR.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="Somador.cs" />
     <Compile Include="Substrator.cs" />
     <Compile Include="ULA1BIT.cs" />
+    <Compile Include="ULA24BITS.cs" />
     <Compile Include="ULA8BITS.cs" />
     <Compile Include="XOR.cs" />
     <EmbeddedResource Include="Form1.resx">
