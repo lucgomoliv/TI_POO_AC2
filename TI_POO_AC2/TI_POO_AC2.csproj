@@ -64,7 +64,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Somador.cs" />
+    <Compile Include="Substrator.cs" />
     <Compile Include="ULA1BIT.cs" />
+    <Compile Include="ULA8BITS.cs" />
     <Compile Include="XOR.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
