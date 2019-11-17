@@ -22,14 +22,24 @@ namespace TI_POO_AC2
             return new string(aux);
         }
 
-        public int Converter(string bin)
+        public double Converter(string bin, bool tipo)
         {
-            int conv = 0;
-            int pot = bin.Length - 1;
-            for (int i = 0; i > bin.Length; i++)
+            double conv = 0;
+            if (tipo)
             {
-                conv += bin[i] * (int)Math.Pow(2, pot);
-                pot--;
+                for (int i = bin.Length-1; i > 0; i--)
+                {
+                    conv += int.Parse(bin[i].ToString()) * Math.Pow(2, -(i+1));
+                }
+            }
+            else
+            {
+                int pot = bin.Length - 1;
+                for (int i = 0; i > bin.Length; i++)
+                {
+                    conv += bin[i] * (int)Math.Pow(2, pot);
+                    pot--;
+                }
             }
             return conv;
         }

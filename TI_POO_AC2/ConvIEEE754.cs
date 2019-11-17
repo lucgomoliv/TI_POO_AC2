@@ -32,6 +32,13 @@ namespace TI_POO_AC2
             else return "00000000000000000000000000000000";
         }
 
+        public double Converter(string bin)
+        {
+            return Math.Pow(-1, convBinario.Converter(bin[0].ToString(), false)) *  
+                   (1 + convBinario.Converter(bin.Substring(9,23), true) * 
+                   Math.Pow(2, double.Parse(bin.Substring(1,8)) - 127));
+        }
+
         private int Expoente(string num)
         {
             if(num[0] != '0') return (num.Split(',')[0].Length - 1) + 127;

@@ -49,6 +49,7 @@
     <Compile Include="AND.cs" />
     <Compile Include="Circuito.cs" />
     <Compile Include="ConvBinario.cs" />
+    <Compile Include="ConvBitToBool.cs" />
     <Compile Include="ConvHexadecimal.cs" />
     <Compile Include="ConvIEEE754.cs" />
     <Compile Include="Demultiplexador.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Substrator.cs" />
     <Compile Include="ULA1BIT.cs" />
     <Compile Include="ULA24BITS.cs" />
+    <Compile Include="ULA32BITS.cs" />
     <Compile Include="ULA8BITS.cs" />
     <Compile Include="XOR.cs" />
     <EmbeddedResource Include="Form1.resx">

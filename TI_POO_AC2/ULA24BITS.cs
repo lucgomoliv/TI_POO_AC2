@@ -10,13 +10,13 @@ namespace TI_POO_AC2
     {
         ULA8BITS ula = new ULA8BITS();
 
-        public bool[] Operar(bool[] a, bool[] b, bool[] op, out bool vaiUm)
+        public bool[] Operar(bool[] a, bool[] b, bool[] op, bool vemUm, out bool vaiUm)
         {
             bool[] result = new bool[24];
             vaiUm = false;
-            for (int i = 0; i < a.Length; i+=8)
+            for (int i = 16; i > 0; i -= 8)
             {
-                result.CopyTo(ula.Operar(SubArray(a, i, 8), SubArray(b, i, 8), op, out vaiUm), i);
+                ula.Operar(SubArray(a, i, 8), SubArray(b, i, 8), op, vaiUm,  out vaiUm).CopyTo(result, i);
             }
             return result;
         }

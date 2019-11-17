@@ -41,6 +41,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtNum2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.radioSoma = new System.Windows.Forms.RadioButton();
+            this.radioSub = new System.Windows.Forms.RadioButton();
+            this.radioMult = new System.Windows.Forms.RadioButton();
+            this.radioDiv = new System.Windows.Forms.RadioButton();
+            this.txtIEEE754Reusltado = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtHexaResultado = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtResultado = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -95,10 +105,10 @@
             // 
             // btnCalcular
             // 
-            this.btnCalcular.Location = new System.Drawing.Point(356, 231);
+            this.btnCalcular.Location = new System.Drawing.Point(366, 247);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
-            this.btnCalcular.TabIndex = 3;
+            this.btnCalcular.TabIndex = 7;
             this.btnCalcular.Text = "Calcular";
             this.btnCalcular.UseVisualStyleBackColor = true;
             this.btnCalcular.Click += new System.EventHandler(this.BtnCalcular_Click);
@@ -153,11 +163,113 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "Número 2";
             // 
+            // radioSoma
+            // 
+            this.radioSoma.AutoSize = true;
+            this.radioSoma.Checked = true;
+            this.radioSoma.Location = new System.Drawing.Point(184, 205);
+            this.radioSoma.Name = "radioSoma";
+            this.radioSoma.Size = new System.Drawing.Size(52, 17);
+            this.radioSoma.TabIndex = 3;
+            this.radioSoma.TabStop = true;
+            this.radioSoma.Text = "Soma";
+            this.radioSoma.UseVisualStyleBackColor = true;
+            // 
+            // radioSub
+            // 
+            this.radioSub.AutoSize = true;
+            this.radioSub.Location = new System.Drawing.Point(294, 205);
+            this.radioSub.Name = "radioSub";
+            this.radioSub.Size = new System.Drawing.Size(74, 17);
+            this.radioSub.TabIndex = 4;
+            this.radioSub.Text = "Subtração";
+            this.radioSub.UseVisualStyleBackColor = true;
+            // 
+            // radioMult
+            // 
+            this.radioMult.AutoSize = true;
+            this.radioMult.Location = new System.Drawing.Point(413, 205);
+            this.radioMult.Name = "radioMult";
+            this.radioMult.Size = new System.Drawing.Size(87, 17);
+            this.radioMult.TabIndex = 5;
+            this.radioMult.Text = "Multiplicação";
+            this.radioMult.UseVisualStyleBackColor = true;
+            // 
+            // radioDiv
+            // 
+            this.radioDiv.AutoSize = true;
+            this.radioDiv.Location = new System.Drawing.Point(546, 205);
+            this.radioDiv.Name = "radioDiv";
+            this.radioDiv.Size = new System.Drawing.Size(60, 17);
+            this.radioDiv.TabIndex = 6;
+            this.radioDiv.Text = "Divisão";
+            this.radioDiv.UseVisualStyleBackColor = true;
+            // 
+            // txtIEEE754Reusltado
+            // 
+            this.txtIEEE754Reusltado.Location = new System.Drawing.Point(312, 349);
+            this.txtIEEE754Reusltado.Name = "txtIEEE754Reusltado";
+            this.txtIEEE754Reusltado.ReadOnly = true;
+            this.txtIEEE754Reusltado.Size = new System.Drawing.Size(204, 20);
+            this.txtIEEE754Reusltado.TabIndex = 22;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(392, 333);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "IEEE754";
+            // 
+            // txtHexaResultado
+            // 
+            this.txtHexaResultado.Location = new System.Drawing.Point(534, 349);
+            this.txtHexaResultado.Name = "txtHexaResultado";
+            this.txtHexaResultado.ReadOnly = true;
+            this.txtHexaResultado.Size = new System.Drawing.Size(72, 20);
+            this.txtHexaResultado.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(531, 332);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(68, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Hexadecimal";
+            // 
+            // txtResultado
+            // 
+            this.txtResultado.Location = new System.Drawing.Point(184, 349);
+            this.txtResultado.Name = "txtResultado";
+            this.txtResultado.Size = new System.Drawing.Size(100, 20);
+            this.txtResultado.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(181, 332);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Resultado";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtIEEE754Reusltado);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtHexaResultado);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtResultado);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.radioDiv);
+            this.Controls.Add(this.radioMult);
+            this.Controls.Add(this.radioSub);
+            this.Controls.Add(this.radioSoma);
             this.Controls.Add(this.txtIEEE7542);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtHexa2);
@@ -193,6 +305,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNum2;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.RadioButton radioSoma;
+        private System.Windows.Forms.RadioButton radioSub;
+        private System.Windows.Forms.RadioButton radioMult;
+        private System.Windows.Forms.RadioButton radioDiv;
+        private System.Windows.Forms.TextBox txtIEEE754Reusltado;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtHexaResultado;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtResultado;
+        private System.Windows.Forms.Label label9;
     }
 }
 
